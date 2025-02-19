@@ -3,6 +3,7 @@ import f2 from '../assets/f2.png'
 import f3 from '../assets/f3.png'
 import f4 from '../assets/f4.png'
 import detail from '../assets/detail.svg'
+import Record from '../assets/record.svg'
 
 
 export const cards = [
@@ -130,6 +131,90 @@ export const table = [
       TCount: 510,
       TWeight: "870KG",
       DetailedView: detail
+    }
+  ];
+  
+
+export const userData = [
+    {
+      no: 1,
+      userName: 'John Doe',
+      email: 'john.doe@example.com',
+      joinDate: '2023-05-12',
+      status: 'online',
+      viewRecords: Record
+    },
+    {
+      no: 2,
+      userName: 'Jane Smith',
+      email: 'jane.smith@example.com',
+      joinDate: '2022-09-30',
+      status: 'offline',
+      viewRecords: Record
+    },
+    {
+      no: 3,
+      userName: 'Samuel Green',
+      email: 'samuel.green@example.com',
+      joinDate: '2024-01-15',
+      status: 'online',
+      viewRecords: Record
+    },
+    {
+      no: 4,
+      userName: 'Emma Brown',
+      email: 'emma.brown@example.com',
+      joinDate: '2023-11-10',
+      status: 'offline',
+      viewRecords: Record
+    },
+    {
+      no: 5,
+      userName: 'Michael White',
+      email: 'michael.white@example.com',
+      joinDate: '2021-08-25',
+      status: 'offline',
+      viewRecords: Record
+    },
+    {
+      no: 6,
+      userName: 'Olivia Davis',
+      email: 'olivia.davis@example.com',
+      joinDate: '2022-06-18',
+      status: 'offline',
+      viewRecords: Record
+    },
+    {
+      no: 7,
+      userName: 'James Wilson',
+      email: 'james.wilson@example.com',
+      joinDate: '2023-02-02',
+      status: 'online',
+      viewRecords: Record
+    },
+    {
+      no: 8,
+      userName: 'Sophia Martinez',
+      email: 'sophia.martinez@example.com',
+      joinDate: '2021-12-05',
+      status: 'offline',
+      viewRecords: Record
+    },
+    {
+      no: 9,
+      userName: 'Liam Anderson',
+      email: 'liam.anderson@example.com',
+      joinDate: '2023-07-22',
+      status: 'ofline',
+      viewRecords: Record
+    },
+    {
+      no: 10,
+      userName: 'Ava Thomas',
+      email: 'ava.thomas@example.com',
+      joinDate: '2022-11-30',
+      status: 'offline',
+      viewRecords: Record
     }
   ];
   

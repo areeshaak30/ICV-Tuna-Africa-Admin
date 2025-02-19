@@ -5,6 +5,7 @@ import User from './components/User';
 import Records from './components/Records';
 import Settings from './components/Settings';
 import Header from "./components/Header";
+import UserRecords from "./components/UserRecords";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
           <Header />
           
           {/* Main content */}
-          <main className="flex-1 overflow-auto mt-[10px] ml-4"> 
+          <main className="flex-1 overflow-auto mt-[8px] ml-4"> 
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/users" element={<User />} />
+              <Route path="/users/userRecords/:userId" element={<UserRecords />} />
               <Route path="/records" element={<Records />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>

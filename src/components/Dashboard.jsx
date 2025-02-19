@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { cards, table } from '../constants/dashboard'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import search from '../assets/search.svg'
@@ -13,10 +13,10 @@ const Dashboard = () => {
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 0);
   };
+  useEffect(() => {
+    setIsOpen(false);
+  }, [selectedOption]);
 
 
   return (
@@ -81,7 +81,7 @@ const Dashboard = () => {
                   </div>
                 </div>
                 {isOpen && (
-                  <div className="absolute left-0 top-full w-[112px] bg-[#F5F6FA] shadow-md rounded-lg">
+                  <div className="absolute left-0 top-full w-[112px] bg-white shadow-md rounded-lg">
                     <div
                       className="p-2 text-[#1E293B] font-medium text-[14px] cursor-pointer hover:bg-[#0857A3] hover:text-white"
                       onClick={() => handleOptionClick('Ascending')}
@@ -153,11 +153,12 @@ const Dashboard = () => {
                   <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569]'>{row.TCount}</td>
                   <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569]'>{row.TWeight}</td>
                   <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569]'>{row.TWeight}</td>
-                  <td className='text-center p-2'><img src={row.DetailedView} alt="" className='pl-4' /></td>
+                  <td className='text-center p-2'>
+                    <img src={row.DetailedView} alt="" className='w-6 h-6 mx-auto' />
+                  </td>
                 </tr>
               ))}
             </tbody>
-
           </table>
         </div>
       </div>
