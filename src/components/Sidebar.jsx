@@ -32,9 +32,9 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="flex h-screen">
+        <div className="flex w-[240px] h-screen">
             {/* Sidebar */}
-            <aside className="w-[240px] bg-white shadow-lg">
+            <aside className=" bg-white shadow-lg">
                 {/* Logo */}
                 <div className="mt-10 flex justify-center">
                     <img src={Logo} alt="Logo" className="w-[180px] h-[48px]" />
@@ -46,7 +46,7 @@ const Sidebar = () => {
                         <button
                             key={item.name}
                             onClick={() => handleNavigation(item.name)}
-                            className={`flex items-center w-[192px] h-[50px] justify-start gap-3 p-3 rounded-md transition ml-5 
+                            className={`flex items-center w-[175px] h-[50px] justify-start gap-3 p-3 rounded-md transition ml-5 
                                 ${active === item.name ? "bg-[#0857A3] text-white" : "text-black"}`}
                         >
                             <span className={`${active === item.name ? "filter brightness-0 invert" : ""}`}>
@@ -63,7 +63,7 @@ const Sidebar = () => {
                 <hr className="text-[#CBD5E1] mt-32 mb-3" />
                 <button
                     onClick={() => handleNavigation("Settings")}
-                    className={`flex items-center w-[192px] h-[50px] justify-start gap-3 p-3 rounded-md transition ml-5 
+                    className={`flex items-center w-[175px] h-[50px] justify-start gap-3 p-3 rounded-md transition ml-5 
                         ${active === "Settings" ? "bg-[#0857A3] text-white" : "text-black"}`}
                 >
                     <span className={`${active === "Settings" ? "filter brightness-0 invert" : ""}`}>

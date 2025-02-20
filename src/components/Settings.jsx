@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import admin from '../assets/admin.jfif'
+import admin from "../assets/admin.jfif";
 
 const Settings = () => {
   const [profileImage, setProfileImage] = useState(admin);
@@ -27,8 +27,7 @@ const Settings = () => {
 
   const validateForm = () => {
     let newErrors = {};
-    if (!formData.firstName.trim())
-      newErrors.firstName = "First Name is Required";
+    if (!formData.firstName.trim()) newErrors.firstName = "First Name is Required";
     if (!formData.lastName.trim()) newErrors.lastName = "Last Name is Required";
     if (!formData.email.trim()) newErrors.email = "E-mail is Required";
     if (!formData.phone.trim()) newErrors.phone = "Phone Number is Required";
@@ -44,122 +43,52 @@ const Settings = () => {
   };
 
   return (
-    <div className="">
-      <h1 className='text-[#0857A3] font-bold text-[36px] leading-[43px] tracking-[-0.11px] '>Settings</h1>
-      <h3 className='text-[#1E293B] font-bold text-[24px] leading-[29px] tracking-[-0.11px] mt-1'>Settings</h3>
+    <div className="px-4 lg:px-8 xl:px-12">
+      <h1 className="text-[#0857A3] font-bold text-3xl lg:text-4xl">Settings</h1>
+      <h3 className="text-[#1E293B] font-bold text-xl lg:text-2xl mt-1">Settings</h3>
       <div className="flex justify-center items-center bg-gray-100">
-        <div className="w-[970px] h-[450px] my-4 bg-white rounded-[14px] shadow-sm p-4 flex flex-col items-center">
+        <div className="w-full max-w-[1010px] my-4 p-4 bg-white rounded-lg shadow-sm flex flex-col items-center">
           <div className="flex flex-col items-center">
             <img
               src={profileImage}
               alt="Profile"
-              className="w-[60px] h-[60px] rounded-full mb-2 object-cover"
+              className="w-16 h-16 rounded-full mb-2 object-cover"
             />
-            <label className="text-[#4379EE] text-sm font-semibold leading-4 tracking-[0.54px] cursor-pointer">
+            <label className="text-[#4379EE] text-sm font-semibold cursor-pointer">
               Edit Photo
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleImageUpload}
-              />
+              <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
             </label>
           </div>
-          <div className="grid grid-cols-2 gap-8 mt-5 w-full px-20">
-            <div className="flex flex-col w-[90%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                First Name
-              </label>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
-                placeholder="Sean"
-              />
-              {errors.firstName && (
-                <span className="text-red-500 text-xs">{errors.firstName}</span>
-              )}
-            </div>
-
-            <div className="flex flex-col w-[90%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                Last Name
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
-                placeholder="Dennis"
-              />
-              {errors.lastName && (
-                <span className="text-red-500 text-xs">{errors.lastName}</span>
-              )}
-            </div>
-
-            <div className="flex flex-col w-[90%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                Your email
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
-                placeholder="Seandennis@yahoo.com"
-              />
-              {errors.email && (
-                <span className="text-red-500 text-xs">{errors.email}</span>
-              )}
-            </div>
-
-            <div className="flex flex-col w-[90%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                Phone Number
-              </label>
-              <input
-                type="text"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
-                placeholder="546-933-2772"
-              />
-              {errors.phone && (
-                <span className="text-red-500 text-xs">{errors.phone}</span>
-              )}
-            </div>
-
-            <div className="flex flex-col w-[90%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                Date of Birth
-              </label>
-              <input
-                type="text"
-                name="dob"
-                value={formData.dob}
-                onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
-                placeholder="11-08-1995"
-              />
-              {errors.dob && (
-                <span className="text-red-500 text-xs">{errors.dob}</span>
-              )}
-            </div>
-
-            <div className="flex flex-col w-[40%]">
-              <label className="block text-[#1E293B] font-semibold text-sm mb-1">
-                Gender
-              </label>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5 w-full max-w-[90%]">
+            {[
+              { label: "First Name", name: "firstName", placeholder: "Sean" },
+              { label: "Last Name", name: "lastName", placeholder: "Dennis" },
+              { label: "Your email", name: "email", placeholder: "Seandennis@yahoo.com", type: "email" },
+              { label: "Phone Number", name: "phone", placeholder: "546-933-2772" },
+              { label: "Date of Birth", name: "dob", placeholder: "11-08-1995" },
+            ].map((field, index) => (
+              <div className="flex flex-col w-full" key={index}>
+                <label className="block text-[#1E293B] font-semibold text-sm mb-1">{field.label}</label>
+                <input
+                  type={field.type || "text"}
+                  name={field.name}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-md px-3"
+                  placeholder={field.placeholder}
+                />
+                {errors[field.name] && (
+                  <span className="text-red-500 text-xs">{errors[field.name]}</span>
+                )}
+              </div>
+            ))}
+            <div className="flex flex-col w-full lg:w-[80%]">
+              <label className="block text-[#1E293B] font-semibold text-sm mb-1">Gender</label>
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
-                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-[4px] px-3"
+                className="w-full h-[38px] bg-[#F5F6FA] border border-[#D5D5D5] rounded-md px-3"
               >
                 <option>Male</option>
                 <option>Female</option>
@@ -167,11 +96,10 @@ const Settings = () => {
               </select>
             </div>
           </div>
-
           <div className="w-full flex justify-center mt-10">
             <button
               onClick={handleSubmit}
-              className="w-[517px] h-[38px] bg-[#0857A3] text-white font-semibold rounded-[8px]"
+              className="w-full max-w-[517px] h-[38px] bg-[#0857A3] text-white font-semibold rounded-md"
             >
               Save
             </button>

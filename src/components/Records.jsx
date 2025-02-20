@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import search from '../assets/search.svg'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { table } from '../constants/dashboard'
-import filter from '../assets/filter.svg'
 import FilterComponent from './FilterComponent';
-
 
 const Records = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +26,7 @@ const Records = () => {
         <h1 className='text-[#0857A3] font-bold text-[36px] leading-[43px] tracking-[-0.11px] '>Records</h1>
         {/* filter */}
         <div className="flex">
-          <div className="flex items-center w-[191px] h-[37px] shadow-md bg-white rounded-lg whitespace-nowrap">
+          <div className="flex items-center w-[191px] h-[37px] mt-2 shadow-md bg-white rounded-lg whitespace-nowrap">
             <p className='font-normal text-[14px] leading-[16px] pl-3'>Sort By</p>
             <div className="h-[30px] border-l border-[#CBD5E1] mx-3"></div>
             <div
@@ -63,7 +61,7 @@ const Records = () => {
               )}
             </div>
           </div>
-          <div className="relative mx-3">
+          <div className="relative mx-3 mt-2">
             <input
               type="text"
               placeholder="Search"
@@ -77,12 +75,10 @@ const Records = () => {
           </div>
         </div>
       </div>
-
       {/* subheading */}
       <h3 className='text-[#1E293B] font-bold text-[24px] leading-[29px] tracking-[-0.11px] mt-1'>Records</h3>
       {/* filter */}
       <FilterComponent />
-
       {/* table */}
       <div className="mt-4 overflow-x-auto">
         <table className='bg-white shadow-sm w-[992px] '>
@@ -137,5 +133,4 @@ const Records = () => {
     </div>
   )
 }
-
 export default Records

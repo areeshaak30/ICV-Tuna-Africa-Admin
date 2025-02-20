@@ -146,7 +146,7 @@ const FilterComponent = () => {
                                     onClick={() => handleOptionClick('Domestic')}
                                     className={`w-[120px] h-[33px] text-center rounded-[17px] ${tempSelectedOption === 'Domestic'
                                         ? 'bg-[#0857A3] text-white'
-                                        : 'border border-[#0857A3] text-[#0857A3] hover:bg-[#0857A3] hover:text-white'
+                                        : 'border border-[#0857A3] text-white bg-[#0857A3] hover:bg-white hover:text-[#0857A3]'
                                         }`}
                                 >
                                     Domestic
