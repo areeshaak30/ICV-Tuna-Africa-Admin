@@ -6,14 +6,21 @@ import { useNavigate } from 'react-router-dom'
 import del from '../assets/delUser.svg'
 import whatsapp from '../assets/whatsapp.svg'
 import copy from '../assets/copy.svg'
+import Pagination from './Pagination'
 
 const User = () => {
   const [deletemodal, setDeleteModal] = useState(false)
   const [addUser, setAddUser] = useState(false)
+  const [currentPage, setCurrentPage] = useState(0);
+  const pageCount = 10;
 
   const handleDeleteClick = () => {
     setDeleteModal(true);
   }
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
 
   const handleCloseModal = () => {
     setDeleteModal(false);
@@ -89,6 +96,7 @@ const User = () => {
             ))}
           </tbody>
         </table>
+        <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
       </div>
       {/* delete modal */}
       {deletemodal && (

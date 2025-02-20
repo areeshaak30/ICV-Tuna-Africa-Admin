@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { cards, table } from '../constants/dashboard'
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import search from '../assets/search.svg'
 import Table from './Table';
 
 const Dashboard = () => {

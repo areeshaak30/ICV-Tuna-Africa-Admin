@@ -15,7 +15,7 @@ const Header = () => {
         setShowModal(false);
     }
     return (
-        <div className="">
+        <>
             <div className='w-full h-[50px] border-b flex gap-5 justify-end my-2'>
                 <div className='relative'>
                     <img src={notification} alt="Notification-bing" className='w-6 h-6 mt-2 cursor-pointer' onClick={handleNotificationClick} />
@@ -72,7 +72,7 @@ const Header = () => {
                     </div>
                 )}
             </div>
-        </div>
+        </>
     )
 }
 export default Header;

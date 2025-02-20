@@ -2,14 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { table } from '../constants/dashboard'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import search from '../assets/search.svg'
+import Pagination from './Pagination';
 
 const Table = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Ascending');
+    const [currentPage, setCurrentPage] = useState(0);
+    const pageCount = 10;
 
     const handleSelectClick = () => {
         setIsOpen((prev) => !prev);
     };
+
+    const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected);
+      };
 
     const handleOptionClick = (option) => {
         setSelectedOption(option);
@@ -122,6 +129,7 @@ const Table = () => {
                             ))}
                         </tbody>
                     </table>
+                    <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
                 </div>
             </div>
         </div>

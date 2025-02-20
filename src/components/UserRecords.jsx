@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import search from '../assets/search.svg'
 import { table } from '../constants/dashboard'
+import Pagination from './Pagination'
 
 const UserRecords = () => {
-    
+    const [currentPage, setCurrentPage] = useState(0);
+      const pageCount = 10;
+
+      const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected);
+      };
+      
     return (
         <div>
             {/* heading */}
@@ -72,6 +79,7 @@ const UserRecords = () => {
                         ))}
                     </tbody>
                 </table>
+                <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
             </div>
         </div>
     )

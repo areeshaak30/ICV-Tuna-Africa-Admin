@@ -21,7 +21,7 @@ export default function Signin() {
 
     setError("");
 
-    if (email === "test@example.com" && password === "password123") {
+    if (email === "test@example.com" && password === "12345678") {
       navigate("/dashboard");
     } else {
       setError("Invalid credentials. Please try again.");

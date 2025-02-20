@@ -3,15 +3,22 @@ import search from '../assets/search.svg'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { table } from '../constants/dashboard'
 import FilterComponent from './FilterComponent';
+import Pagination from './Pagination';
 
 const Records = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Ascending');
+  const [currentPage, setCurrentPage] = useState(0);
+  const pageCount = 10;
 
   const handleSelectClick = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+  
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
@@ -127,6 +134,7 @@ const Records = () => {
             ))}
           </tbody>
         </table>
+        <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
       </div>
 
       {/* Modals */}
