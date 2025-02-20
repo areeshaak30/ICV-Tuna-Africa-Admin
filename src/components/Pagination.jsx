@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Pagination = ({ pageCount, onPageChange }) => {
   return (
-    <div className="flex justify-center mt-6 mr-14">
+    <div className="flex justify-center mt-6 mr-14 mb-2">
       <ReactPaginate
         previousLabel={
           <div className="flex items-center gap-2 px-6 py-2 bg-[#0857A3] text-white rounded-md text-sm font-inter font-medium">
@@ -30,5 +30,4 @@ const Pagination = ({ pageCount, onPageChange }) => {
     </div>
   );
 };
-
 export default Pagination;

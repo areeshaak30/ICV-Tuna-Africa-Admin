@@ -118,20 +118,20 @@ export const table = [
       TWeight: "940KG",
       DetailedView: detail
     },
-    {
-      no: 7,
-      username: "David Lee",
-      VesselName: "Pacific Dream",
-      offloadDate: "2024/09/19",
-      MarketType: "Domestic",
-      LongFin: 495,
-      BigEye: 290,
-      YellowFin: "---",
-      SBlueFin: 78,
-      TCount: 510,
-      TWeight: "870KG",
-      DetailedView: detail
-    }
+    // {
+    //   no: 7,
+    //   username: "David Lee",
+    //   VesselName: "Pacific Dream",
+    //   offloadDate: "2024/09/19",
+    //   MarketType: "Domestic",
+    //   LongFin: 495,
+    //   BigEye: 290,
+    //   YellowFin: "---",
+    //   SBlueFin: 78,
+    //   TCount: 510,
+    //   TWeight: "870KG",
+    //   DetailedView: detail
+    // }
   ];
   
 
@@ -184,37 +184,37 @@ export const userData = [
       status: 'offline',
       viewRecords: Record
     },
-    {
-      no: 7,
-      userName: 'James Wilson',
-      email: 'james.wilson@example.com',
-      joinDate: '2023-02-02',
-      status: 'online',
-      viewRecords: Record
-    },
-    {
-      no: 8,
-      userName: 'Sophia Martinez',
-      email: 'sophia.martinez@example.com',
-      joinDate: '2021-12-05',
-      status: 'offline',
-      viewRecords: Record
-    },
-    {
-      no: 9,
-      userName: 'Liam Anderson',
-      email: 'liam.anderson@example.com',
-      joinDate: '2023-07-22',
-      status: 'ofline',
-      viewRecords: Record
-    },
-    {
-      no: 10,
-      userName: 'Ava Thomas',
-      email: 'ava.thomas@example.com',
-      joinDate: '2022-11-30',
-      status: 'offline',
-      viewRecords: Record
-    }
+    // {
+    //   no: 7,
+    //   userName: 'James Wilson',
+    //   email: 'james.wilson@example.com',
+    //   joinDate: '2023-02-02',
+    //   status: 'online',
+    //   viewRecords: Record
+    // },
+    // {
+    //   no: 8,
+    //   userName: 'Sophia Martinez',
+    //   email: 'sophia.martinez@example.com',
+    //   joinDate: '2021-12-05',
+    //   status: 'offline',
+    //   viewRecords: Record
+    // },
+    // {
+    //   no: 9,
+    //   userName: 'Liam Anderson',
+    //   email: 'liam.anderson@example.com',
+    //   joinDate: '2023-07-22',
+    //   status: 'ofline',
+    //   viewRecords: Record
+    // },
+    // {
+    //   no: 10,
+    //   userName: 'Ava Thomas',
+    //   email: 'ava.thomas@example.com',
+    //   joinDate: '2022-11-30',
+    //   status: 'offline',
+    //   viewRecords: Record
+    // }
   ];
   

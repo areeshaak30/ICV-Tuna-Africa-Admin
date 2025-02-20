@@ -10,11 +10,11 @@ const UserRecords = () => {
       const handlePageChange = ({ selected }) => {
         setCurrentPage(selected);
       };
-      
+
     return (
-        <div>
+        <div className='ml-[270px]'>
             {/* heading */}
-            <div className="flex justify-between">
+            <div className="flex justify-between pt-2">
                 <h1 className='text-[#0857A3] font-bold text-[36px] leading-[43px] tracking-[-0.11px] '>User</h1>
                 <div className="relative mx-4">
                     <input
@@ -32,7 +32,7 @@ const UserRecords = () => {
             <h3 className='text-[#1E293B] font-bold text-[24px] leading-[29px] tracking-[-0.11px] mt-1'>User Records</h3>
 
             {/* table */}
-            <div className="mt-8 overflow-x-auto">
+            <div className="mt-6 overflow-x-auto">
                 <table className='bg-white shadow-sm w-[992px] '>
                     <thead>
                         <tr>
