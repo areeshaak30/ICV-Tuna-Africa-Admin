@@ -38,7 +38,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className="w-[240px] h-screen flex flex-col bg-white shadow-lg fixed top-0 left-0 overflow-y-auto">
+    <div className="w-[240px] h-screen flex flex-col bg-white shadow-lg fixed top-0 left-0 overflow-y-auto font-inter">
       {/* Logo */}
       <div className="mt-10 flex justify-center">
         <img src={Logo} alt="Logo" className="w-[180px] h-[48px]" />
@@ -104,7 +104,7 @@ const Sidebar = () => {
       {/* Logout Modal */}
       {logoutmodal && (
         <div className="fixed inset-0 bg-[#B3B3B3] bg-opacity-30 flex justify-center items-center z-40">
-          <div className="w-[90%] md:w-[500px] bg-white rounded-[20px] p-[30px]">
+          <div className="w-[90%] md:w-[500px] bg-white rounded-[20px] p-[30px] ml-24 mb-96">
             <img src={del} alt="" className="w-14 h-14 mx-auto" />
             <h1 className="text-[#E63946] mt-[22px] font-[600] text-[24px] text-center">
               Do you really want to Logout?

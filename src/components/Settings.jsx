@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import admin from "../assets/admin.jfif";
+import admin from "../assets/Vector.svg";
 
 const Settings = () => {
   const [profileImage, setProfileImage] = useState(admin);

@@ -31,8 +31,7 @@ export default function Signin() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
-      {/* Left Section */}
+    <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden font-inter">
       <div className="relative flex-1 flex justify-center items-center overflow-hidden">
         <img
           src={LeftImage}
@@ -46,21 +45,16 @@ export default function Signin() {
         />
       </div>
 
-      {/* Right Section */}
       <div className="flex-1 flex justify-center items-center bg-white px-6">
         <div className="w-full max-w-[400px] flex flex-col items-center text-center">
-          {/* Top Image */}
           <img
             src={LoginVector}
             alt="Login Vector"
             className="w-[200px] md:w-[250px] h-auto mb-2"
           />
 
-          <h2 className="font-inter font-bold text-2xl text-[#1E293B] mb-4">
-            LOGIN
-          </h2>
+          <h2 className="font-bold text-2xl text-[#1E293B] mb-4">LOGIN</h2>
 
-          {/* Form Section */}
           <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit}>
             {error && <p className="text-red-500 text-sm">{error}</p>}
 
@@ -71,7 +65,7 @@ export default function Signin() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter E-mail"
-                className="w-full h-[45px] px-3 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300"
+                className="w-full h-[45px] px-3 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300 font-inter"
                 required
               />
             </div>
@@ -83,7 +77,7 @@ export default function Signin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password"
-                className="w-full h-[45px] px-3 pr-10 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300"
+                className="w-full h-[45px] px-3 pr-10 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300 font-inter"
                 required
               />
               <button
@@ -91,18 +85,14 @@ export default function Signin() {
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? (
-                  <HiEye size={22} />
-                ) : (
-                  <HiEyeOff size={22} />
-                )}
+                {showPassword ? <HiEye size={22} /> : <HiEyeOff size={22} />}
               </button>
             </div>
 
             <div className="w-full flex justify-end">
               <Link
                 to="/forgot-password"
-                className="text-[#0857A3] text-sm underline"
+                className="text-[#0857A3] text-sm underline font-inter"
               >
                 Forgot Password?
               </Link>
@@ -110,7 +100,7 @@ export default function Signin() {
 
             <button
               type="submit"
-              className="w-full h-[45px] bg-[#0857A3] text-white text-lg font-bold rounded-md cursor-pointer transition-all duration-300 hover:bg-blue-800 active:scale-95 mt-0"
+              className="w-full h-[45px] bg-[#0857A3] text-white text-lg font-bold rounded-md cursor-pointer transition-all duration-300 hover:bg-blue-800 active:scale-95 mt-0 font-inter"
             >
               Login
             </button>

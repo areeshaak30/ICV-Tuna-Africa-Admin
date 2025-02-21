@@ -70,7 +70,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="flex w-screen h-screen overflow-hidden">
+    <div className="flex w-screen h-screen overflow-hidden font-inter">
       <div className="flex-1 h-full flex justify-center items-center relative">
         <img
           src={LeftImage}
