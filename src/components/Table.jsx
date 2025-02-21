@@ -49,7 +49,7 @@ const Table = () => {
                                 </div>
                             </div>
                             {isOpen && (
-                                <div className="absolute left-0 top-full w-[112px] bg-white shadow-md rounded-lg">
+                                <div className="absolute left-0 top-full w-[112px] bg-white shadow-md z-10 rounded-lg">
                                     <div
                                         className="p-2 text-[#1E293B] font-medium text-[14px] cursor-pointer hover:bg-[#0857A3] hover:text-white"
                                         onClick={() => handleOptionClick('Ascending')}
@@ -82,9 +82,9 @@ const Table = () => {
             </div>
 
             {/* table content */}
-            <div className="mt-3 overflow-x-auto lg:overflow-visible">
+            <div className="mt-4 overflow-x-auto lg:overflow-visible">
                 <div className="overflow-y-auto max-h-[400px]">
-                    <table className='bg-white shadow-sm w-full lg:w-auto min-w-[970px]'>
+                    <table className='bg-white shadow-sm w-full lg:w-full min-w-[1150px]'>
                         <thead className='sticky top-0 bg-white'>
                             <tr>
                                 <th className='font-[500] text-[14px] leading-[22px] py-2 text-[#1E293B] border-r border-b border-[#CBD5E1]'>No</th>
@@ -121,7 +121,8 @@ const Table = () => {
                                     <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-r border-[#CBD5E1]'>{row.SBlueFin}</td>
                                     <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-r border-[#CBD5E1]'>{row.TWeight}</td>
                                     <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-r border-[#CBD5E1]'>{row.TCount}</td>
-                                    <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-[#CBD5E1]'>{row.TWeight}</td>
+                                    <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-r border-[#CBD5E1]'>{row.TWeight}</td>
+                                    <td className='text-center p-2 font-[400] text-[13px] leading-[22px] text-[#475569] border-r border-[#CBD5E1]'>{row.TWeight}</td>
                                     <td className='text-center p-2'>
                                         <img src={row.DetailedView} alt="" className='w-6 h-6 mx-auto' />
                                     </td>

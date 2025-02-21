@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import search from '../assets/search.svg'
-import user from '../assets/user.svg'
-import { userData } from '../constants/dashboard'
-import { useNavigate } from 'react-router-dom'
-import del from '../assets/delUser.svg'
-import whatsapp from '../assets/whatsapp.svg'
-import copy from '../assets/copy.svg'
-import Pagination from './Pagination'
+import React, { useState } from "react";
+import search from "../assets/search.svg";
+import user from "../assets/user.svg";
+import { userData } from "../constants/dashboard";
+import { useNavigate } from "react-router-dom";
+import del from "../assets/delUser.svg";
+import whatsapp from "../assets/whatsapp.svg";
+import copy from "../assets/copy.svg";
+import Pagination from "./Pagination";
 
 const User = () => {
-  const [deletemodal, setDeleteModal] = useState(false)
-  const [addUser, setAddUser] = useState(false)
+  const [deletemodal, setDeleteModal] = useState(false);
+  const [addUser, setAddUser] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const pageCount = 10;
 
   const handleDeleteClick = () => {
     setDeleteModal(true);
-  }
+  };
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -24,15 +24,15 @@ const User = () => {
 
   const handleCloseModal = () => {
     setDeleteModal(false);
-  }
+  };
 
   const handleAddUser = () => {
     setAddUser(true);
-  }
+  };
 
   const handleCloseUser = () => {
     setAddUser(false);
-  }
+  };
 
   const navigate = useNavigate();
   const handleViewRecords = (userId) => {
@@ -78,7 +78,15 @@ const User = () => {
         <table className="min-w-full bg-white shadow-sm">
           <thead>
             <tr>
-              {['No', 'User Name', 'Email', 'Join Date', 'Status', 'View Records', ''].map((heading, index) => (
+              {[
+                "No",
+                "User Name",
+                "Email",
+                "Join Date",
+                "Status",
+                "View Records",
+                "",
+              ].map((heading, index) => (
                 <th
                   key={index}
                   className="font-[500] text-[14px] py-2 text-[#1E293B] border-b border-[#CBD5E1] text-center"
@@ -104,8 +112,11 @@ const User = () => {
                   {row.joinDate}
                 </td>
                 <td
-                  className={`text-center p-2 border-b border-[#CBD5E1] ${row.status === 'offline' ? 'text-[#EF3826]' : 'text-[#00B69B]'
-                    }`}
+                  className={`text-center p-2 border-b border-[#CBD5E1] ${
+                    row.status === "offline"
+                      ? "text-[#EF3826]"
+                      : "text-[#00B69B]"
+                  }`}
                 >
                   {row.status}
                 </td>
@@ -119,7 +130,7 @@ const User = () => {
                 </td>
                 <td
                   onClick={handleDeleteClick}
-                  className="text-center cursor-pointer p-2 text-[#EF3826] border-b border-[#CBD5E1]"
+                  className="text-center cursor-pointer font-bold p-2 text-[#EF3826] border-b border-[#CBD5E1]"
                 >
                   Delete User
                 </td>
@@ -158,18 +169,62 @@ const User = () => {
 
       {/* Add user modal */}
       {addUser && (
-        <div className="fixed inset-0 bg-[#B3B3B3] bg-opacity-30 flex justify-center items-center z-40">
-          <div className="w-[90%] md:w-[520px] bg-white rounded-[20px] p-5">
-            <h1 className="text-[#1E3A5F] font-[700] text-[24px]">Share with friends</h1>
-            <div className="flex items-center border border-[#CBD5E1] rounded-lg w-full h-[45px] px-3 mt-6">
-              <input type="text" placeholder="Enter E-mail" className="flex-1 outline-none" />
-              <a href="#" className="text-[#0857A3] text-sm hover:underline">
+        <div className="fixed inset-0 bg-[#B3B3B3] bg-opacity-30 flex justify-center items-start z-40">
+          {/* Modal container */}
+          <div className="relative top-[185px] w-[520px] h-[290px] bg-white rounded-[20px] gap-[16px] z-50 p-5">
+            <h1 className="text-[#1E3A5F] font-[700] text-[24px] leading-[29px]">
+              Share with friends
+            </h1>
+            {/* Input container */}
+            <div className="flex items-center mx-2 border border-[#CBD5E1] rounded-lg w-[460px] h-[45px] px-3 mt-6">
+              <input
+                type="text"
+                placeholder="Enter E-mail"
+                className="flex-1 outline-none"
+              />
+              <a
+                href="#"
+                className="text-[#0857A3] text-sm font-normal leading-4 hover:underline"
+              >
                 Invite
               </a>
             </div>
-            <p className="text-[#1E293B] text-[16px] text-center my-2">OR</p>
-            <div className="flex justify-center mt-3">
-              <button onClick={handleCloseUser} className="text-white bg-[#0857A3] w-full h-[45px] rounded-lg">
+            <p className="text-[#1E293B] text-[16px] font-normal leading-[19.36px] text-center my-2">
+              OR
+            </p>
+            <div className="flex justify-center">
+              {/* copy link */}
+              <div className="flex flex-col items-center">
+                <div className="w-10 h-10 flex items-center justify-center bg-[#EFE9E9] rounded-[12px]">
+                  <img
+                    src={copy}
+                    alt="Copy"
+                    className="w-5 h-5 cursor-pointer"
+                  />
+                </div>
+                <p className="text-[#4D5C6D] text-[12px] font-normal leading-[14px] text-center mt-2">
+                  Copy Link
+                </p>
+              </div>
+              {/* share */}
+              <div className="flex flex-col items-center ml-4">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img
+                    src={whatsapp}
+                    alt="WhatsApp"
+                    className="cursor-pointer"
+                  />
+                </div>
+                <p className="text-[#4D5C6D] text-[12px] font-normal leading-[14px] text-center pl-2">
+                  WhatsApp
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center mt-3 gap-4 ">
+              <button
+                onClick={handleCloseUser}
+                className="text-white bg-[#0857A3] w-[460px] h-[45px] rounded-lg"
+              >
                 Cancel
               </button>
             </div>
@@ -177,6 +232,6 @@ const User = () => {
         </div>
       )}
     </div>
-  )
-}
-export default User
+  );
+};
+export default User;

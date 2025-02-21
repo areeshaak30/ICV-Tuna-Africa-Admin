@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { HiEye, HiEyeOff } from "react-icons/hi";
 
 import LeftImage from "../assets/Left-Image.png";
 import LogoImage from "../assets/Logo.svg";
@@ -10,6 +11,7 @@ export default function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,20 +76,34 @@ export default function Signin() {
               />
             </div>
 
-            <div className="flex flex-col text-left">
+            <div className="flex flex-col text-left relative">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password"
-                className="w-full h-[45px] px-3 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300"
+                className="w-full h-[45px] px-3 pr-10 border border-[#CBD5E1] rounded-md text-lg outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-300"
                 required
               />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? (
+                  <HiEye size={22} />
+                ) : (
+                  <HiEyeOff size={22} />
+                )}
+              </button>
             </div>
 
             <div className="w-full flex justify-end">
-              <Link to="/forgot-password" className="text-[#0857A3] text-sm underline">
+              <Link
+                to="/forgot-password"
+                className="text-[#0857A3] text-sm underline"
+              >
                 Forgot Password?
               </Link>
             </div>

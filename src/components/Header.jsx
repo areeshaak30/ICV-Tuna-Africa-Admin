@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import notification from '../assets/notification-bing.svg'
-import admin from '../assets/admin.jfif'
+import admin from '../assets/Vector.svg'
 import close from '../assets/close.svg'
 import mark from '../assets/mark.svg'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+    const navigate = useNavigate()
     const [showmodal, setShowModal] = useState(false)
 
     const handleNotificationClick = () => {
@@ -21,10 +23,10 @@ const Header = () => {
                     <img src={notification} alt="Notification-bing" className='w-6 h-6 mt-2 cursor-pointer' onClick={handleNotificationClick} />
                     <div className='absolute top-[7px] right-[4px] w-[6px] h-[6px] bg-black rounded-full'></div>
                 </div>
-                <img src={admin} alt="Admin" className='w-10 h-10 rounded-[64px]' />
+                <img src={admin} alt="Admin" className='w-10 h-10 rounded-[8px] cursor-pointer' onClick={()=>navigate('/settings')}/>
                 <div className="mr-12 mt-1">
-                    <h6 className='font-bold text-[14px] leading-[16.94px]'>Sean Dennis</h6>
-                    <p className='font-[600] text-[12px] leading-[14.52px] text-[#0857A3]'>Admin</p>
+                    <h6 className='font-bold text-[14px] leading-[16.94px] cursor-pointer' onClick={()=>navigate("/settings")} >Sean Dennis</h6>
+                    <p className='font-[600] text-[12px] leading-[14.52px] text-[#0857A3] cursor-pointer' onClick={()=>navigate("/settings")}>Admin</p>
                 </div>
                 {/* Show modal */}
                 {showmodal && (
